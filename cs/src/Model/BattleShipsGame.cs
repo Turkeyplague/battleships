@@ -94,7 +94,7 @@ public class BattleShipsGame
 		}
 
 		//change player if the last hit was a miss
-		if (newAttack.Value == ResultOfAttack.Miss) {
+		if (newAttack.Value == ResultOfAttack.Miss || newAttack.Value == ResultOfAttack.Hit) {
 			_playerIndex = otherPlayer;
 		}
 
