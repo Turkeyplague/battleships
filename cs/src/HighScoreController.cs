@@ -132,6 +132,10 @@ static class HighScoreController
 
         SwinGame.DrawText("   High Scores   ", Color.White, GameFont("Courier"), SCORES_LEFT, SCORES_HEADING);
 
+		//New 'Back' button to make the usability of the screen better
+		SwinGame.DrawText("Click or press 'Enter' to return to the Main Menu...", Color.White, GameFont("Courier"), SCORES_LEFT/2, SCORES_TOP + 10*SCORE_GAP);
+		SwinGame.DrawBitmap(GameImage("Return"), 2*SCORES_LEFT/3, SCORES_TOP + 12*SCORE_GAP);
+
         //For all of the scores
         int i = 0;
         for (i = 0; i <= _Scores.Count - 1; i++) {
@@ -154,9 +158,23 @@ static class HighScoreController
     /// <remarks></remarks>
     public static void HandleHighScoreInput()
     {
-        if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN)) {
-            GameController.EndCurrentState();
-        }
+		const int BX = 2*SCORES_LEFT/3;
+		const int BY = 80 + 12*30;
+		const int BWIDTH = 166;
+		const int BHEIGHT = 58;
+		Rectangle R = SwinGame.RectangleFrom(BX, BY, BWIDTH, BHEIGHT);
+
+		if (SwinGame.MouseClicked(MouseButton.LeftButton))
+		{
+			Point2D mPoint = SwinGame.MousePosition();
+			if (SwinGame.PointInRect(mPoint, R))
+			{
+				GameController.EndCurrentState();
+			}
+		}
+//        if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN)) {
+//            GameController.EndCurrentState();
+//        }
     }
 
     /// <summary>

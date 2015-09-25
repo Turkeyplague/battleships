@@ -41,6 +41,9 @@ public static class GameResources
         NewImage("Explosion", "explosion.png");
         NewImage("Splash", "splash.png");
 
+		//Scores Page Button
+		NewImage("Return", "return_button.gif");
+
     }
 
     private static void LoadSounds()
