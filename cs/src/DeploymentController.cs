@@ -68,6 +68,7 @@ static class DeploymentController
         if (SwinGame.KeyTyped(KeyCode.vk_r)) {
             HumanPlayer.RandomizeDeployment();
         }
+			
 
         if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
             ShipName selected = default(ShipName);
@@ -81,7 +82,7 @@ static class DeploymentController
             if (HumanPlayer.ReadyToDeploy & IsMouseInRectangle(PLAY_BUTTON_LEFT, TOP_BUTTONS_TOP, PLAY_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
                 EndDeployment();
             } else if (IsMouseInRectangle(UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT)) {
-                _currentDirection = Direction.LeftRight;
+                _currentDirection = Direction.UpDown;
             } else if (IsMouseInRectangle(LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT)) {
                 _currentDirection = Direction.LeftRight;
             } else if (IsMouseInRectangle(RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
@@ -89,6 +90,21 @@ static class DeploymentController
             }
         }
     }
+
+	static public void DrawDeployDebug()
+	{
+		//Play
+		SwinGame.DrawRectangle (Color.Red, PLAY_BUTTON_LEFT, TOP_BUTTONS_TOP, PLAY_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT);
+
+		//Up Down
+		SwinGame.DrawRectangle (Color.Red, UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT);
+
+		//Left Right
+		SwinGame.DrawRectangle (Color.Red, LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT);
+
+		//Random
+		SwinGame.DrawRectangle (Color.Red, RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT);
+	}
 
     /// <summary>
     /// The user has clicked somewhere on the screen, check if its is a deployment and deploy
@@ -107,8 +123,8 @@ static class DeploymentController
         //Calculate the row/col clicked
         int row = 0;
         int col = 0;
-        row = Convert.ToInt32(Math.Floor((mouse.Y) / (CELL_HEIGHT + CELL_GAP)));
-        col = Convert.ToInt32(Math.Floor((mouse.X - FIELD_LEFT) / (CELL_WIDTH + CELL_GAP)));
+		row = Convert.ToInt32(Math.Floor((mouse.Y - FIELD_TOP) / (CELL_HEIGHT + CELL_GAP)));
+		col = Convert.ToInt32(Math.Floor((mouse.X - FIELD_LEFT) / (CELL_WIDTH + CELL_GAP)));
 
         if (row >= 0 & row < HumanPlayer.PlayerGrid.Height) {
             if (col >= 0 & col < HumanPlayer.PlayerGrid.Width) {
@@ -169,6 +185,8 @@ static class DeploymentController
         SwinGame.DrawBitmap(GameImage("RandomButton"), RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP);
 
         DrawMessage();
+
+		//DrawDeployDebug ();
     }
 
     /// <summary>
