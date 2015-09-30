@@ -44,6 +44,9 @@ public static class GameResources
 		//Scores Page Button
 		NewImage("Return", "return_button.gif");
 
+		//In game return to menu button
+		NewImage("MenuButton", "menu_button.png");
+
     }
 
     private static void LoadSounds()

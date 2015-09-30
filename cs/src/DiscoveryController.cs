@@ -35,6 +35,21 @@ static class DiscoveryController
         if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
             DoAttack();
         }
+
+		const int BX = 693;
+		const int BY = 72;
+		const int BWIDTH = 78;
+		const int BHEIGHT = 44;
+		Rectangle R = SwinGame.RectangleFrom(BX, BY, BWIDTH, BHEIGHT);
+
+		if (SwinGame.MouseClicked(MouseButton.LeftButton))
+		{
+			Point2D mPoint = SwinGame.MousePosition();
+			if (SwinGame.PointInRect(mPoint, R))
+			{
+				GameController.EndCurrentState();
+			}
+		}
     }
 
     /// <summary>
@@ -68,12 +83,16 @@ static class DiscoveryController
         const int SHOTS_TOP = 157;
         const int HITS_TOP = 206;
         const int SPLASH_TOP = 256;
+		const int MENU_BUTTON_TOP = 72;
+		const int MENU_BUTTON_LEFT = 693;
 
         if ((SwinGame.KeyDown(KeyCode.vk_LSHIFT) | SwinGame.KeyDown(KeyCode.vk_RSHIFT)) & SwinGame.KeyDown(KeyCode.vk_c)) {
             DrawField(HumanPlayer.EnemyGrid, ComputerPlayer, true);
         } else {
             DrawField(HumanPlayer.EnemyGrid, ComputerPlayer, false);
         }
+
+		SwinGame.DrawBitmap(GameImage("MenuButton"), MENU_BUTTON_LEFT, MENU_BUTTON_TOP);
 
         DrawSmallField(HumanPlayer.PlayerGrid, HumanPlayer);
         DrawMessage();
