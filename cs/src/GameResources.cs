@@ -26,7 +26,12 @@ public static class GameResources
         //Deployment
         NewImage("LeftRightButton", "deploy_dir_button_horiz.png");
         NewImage("UpDownButton", "deploy_dir_button_vert.png");
-        NewImage("SelectedShip", "deploy_button_hl.png");
+		NewImage("SelectedShip", "deploy_button_hl.png");
+		NewImage("SelectedShip1", "deploy_button_hl_1.png");
+		NewImage("SelectedShip2", "deploy_button_hl_2.png");
+		NewImage("SelectedShip3", "deploy_button_hl_3.png");
+		NewImage("SelectedShip4", "deploy_button_hl_4.png");
+		NewImage("SelectedShip5", "deploy_button_hl_5.png");
         NewImage("PlayButton", "deploy_play_button.png");
         NewImage("RandomButton", "deploy_randomize_button.png");
 
