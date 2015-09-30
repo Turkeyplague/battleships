@@ -179,7 +179,9 @@ public class Player : IEnumerable<Ship>
 	/// <returns>the result of the attack</returns>
 	internal AttackResult Shoot(int row, int col)
 	{
+		
 		_shots += 1;
+
 		AttackResult result = default(AttackResult);
 		result = EnemyGrid.HitTile(row, col);
 
@@ -190,6 +192,10 @@ public class Player : IEnumerable<Ship>
 				break;
 			case ResultOfAttack.Miss:
 				_misses += 1;
+				break;
+			//a crude method of preventing the shot count from increasing
+			case ResultOfAttack.ShotAlready:
+				_shots -= 1;
 				break;
 		}
 
