@@ -109,16 +109,14 @@ public abstract class AIPlayer : Player
 		int row = 0;
 		int column = 0;
 
-		//keep hitting until a miss
-		do {
-			Delay();
+		//take single turn, return result of shot
+		Delay();
 
-			GenerateCoords(ref row, ref column);
-			//generate coordinates for shot
-			result = _game.Shoot(row, column);
-			//take shot
-			ProcessShot(row, column, result);
-		} while (result.Value != ResultOfAttack.Hit && result.Value != ResultOfAttack.Miss && result.Value != ResultOfAttack.GameOver && !SwinGame.WindowCloseRequested());
+		GenerateCoords(ref row, ref column);
+		//generate coordinates for shot
+		result = _game.Shoot(row, column);
+		//take shot
+		ProcessShot(row, column, result);
 
 		return result;
 	}

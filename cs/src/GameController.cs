@@ -267,8 +267,10 @@ public static class GameController
 				if (object.ReferenceEquals(_theGame.Player, ComputerPlayer))
 					AIAttack();
 				break;
-//		case ResultOfAttack.Destroyed:
-			
+			case ResultOfAttack.Destroyed:
+				if (object.ReferenceEquals(_theGame.Player, ComputerPlayer))
+					AIAttack();
+				break;
         }
     }
 
