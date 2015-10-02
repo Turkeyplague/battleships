@@ -224,7 +224,8 @@ static class HighScoreController
             _Scores.Sort();
 			SaveScores();
 
-            GameController.EndCurrentState();
+            //GameController.EndCurrentState();
+			GameController.AddNewState(GameState.ViewingHighScores);
         }
     }
 }

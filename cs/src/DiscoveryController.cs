@@ -32,6 +32,11 @@ static class DiscoveryController
             AddNewState(GameState.ViewingGameMenu);
         }
 
+		//Cheat to end of game
+		if (SwinGame.KeyTyped(KeyCode.vk_c)) {
+			GameController.SwitchState(GameState.EndingGame);
+		}
+
         if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
             DoAttack();
         }
