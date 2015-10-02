@@ -21,7 +21,7 @@ using static MenuController;
 /// </remarks>
 static class HighScoreController
 {
-    private const int NAME_WIDTH = 3;
+    private const int NAME_WIDTH = 15;
 
     private const int SCORES_LEFT = 490;
     /// <summary>
@@ -224,7 +224,8 @@ static class HighScoreController
             _Scores.Sort();
 			SaveScores();
 
-            //GameController.EndCurrentState();
+			//DrawHighScores ();
+          	GameController.EndCurrentState();
 			GameController.AddNewState(GameState.ViewingHighScores);
         }
     }
