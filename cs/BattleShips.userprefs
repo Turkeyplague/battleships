@@ -1,12 +1,39 @@
 ﻿<Properties StartupItem="BattleShips.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Mac|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/GameController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Windows|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Model\Player.cs">
     <Files>
-      <File FileName="src/Model/AIPlayer.cs" Line="1" Column="1" />
-      <File FileName="src/Model/AIHardPlayer.cs" Line="1" Column="1" />
-      <File FileName="src/Model/AIMediumPlayer.cs" Line="1" Column="1" />
-      <File FileName="src/GameController.cs" Line="1" Column="1" />
+      <File FileName="src\Model\AIPlayer.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="src\Model\AIHardPlayer.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="src\Model\AIMediumPlayer.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="c:\Users\Nic\battleships\battleships\cs\src\DeploymentController.cs" Line="9" Column="7" NotebookId="1" />
+      <File FileName="src\HighScoreController.cs" Line="221" Column="4" NotebookId="1" />
+      <File FileName="src\GameLogic.cs" Line="6" Column="11" NotebookId="1" />
+      <File FileName="src\GameState.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="src\MenuController.cs" Line="278" Column="67" NotebookId="1" />
+      <File FileName="src\DiscoveryController.cs" Line="41" Column="24" NotebookId="1" />
+      <File FileName="src\UtilityFunctions.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="src\Model\ResultOfAttack.cs" Line="36" Column="2" NotebookId="1" />
+      <File FileName="src\Model\Player.cs" Line="109" Column="24" NotebookId="1" />
+      <File FileName="src\Model\ISeaGrid.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="src\Model\Direction.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="src\Model\BattleShipsGame.cs" Line="89" Column="48" NotebookId="1" />
+      <File FileName="src\Model\SeaGrid.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="src\Model\ShipName.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="src\Model\Tile.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="src\Model\TileView.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="src\Model\AIOption.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="src\Model\AttackResult.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="src\EndingGameController.cs" Line="45" Column="92" NotebookId="1" />
+      <File FileName="src\Model\SeaGridAdapter.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Resources\highscores.txt" Line="1" Column="1" NotebookId="1" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="3140" Y="480" Width="968" Height="730">
+        <Files>
+          <File FileName="src\GameController.cs" Line="380" Column="28" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

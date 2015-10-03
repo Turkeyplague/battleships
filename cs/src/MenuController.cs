@@ -278,7 +278,7 @@ static class MenuController
                 GameController.AddNewState(GameState.ViewingHighScores);
                 break;
             case MAIN_MENU_QUIT_BUTTON:
-                GameController.EndCurrentState();
+				GameController.AddNewState(GameState.Quitting);
                 break;
         }
     }

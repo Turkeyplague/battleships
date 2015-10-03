@@ -169,7 +169,7 @@ static class HighScoreController
 			Point2D mPoint = SwinGame.MousePosition();
 			if (SwinGame.PointInRect(mPoint, R))
 			{
-				GameController.EndCurrentState();
+				GameController.SwitchState(GameState.ViewingMainMenu);
 			}
 		}
 //        if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN)) {
@@ -224,8 +224,7 @@ static class HighScoreController
             _Scores.Sort();
 			SaveScores();
 
-			//DrawHighScores ();
-          	GameController.EndCurrentState();
+          	//GameController.EndCurrentState();
 			GameController.AddNewState(GameState.ViewingHighScores);
         }
     }
