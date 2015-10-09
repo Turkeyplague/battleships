@@ -161,6 +161,7 @@ public static class GameController
         isHuman = object.ReferenceEquals(_theGame.Player, HumanPlayer);
 
         if (isHuman) {
+			
             Message = "You " + result.ToString();
         } else {
             Message = "The AI " + result.ToString();

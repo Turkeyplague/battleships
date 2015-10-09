@@ -91,9 +91,11 @@ public class BattleShipsGame
 
 		if (AttackCompleted != null) {
 			AttackCompleted(this, newAttack);
+
+//			Console.WriteLine(newAttack.Text);
 		}
 
-		//change player if the last hit was a miss
+		//change player
 		if (newAttack.Value == ResultOfAttack.Miss || newAttack.Value == ResultOfAttack.Hit || newAttack.Value == ResultOfAttack.Destroyed) {
 			_playerIndex = otherPlayer;
 		}

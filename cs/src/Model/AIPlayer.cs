@@ -118,6 +118,13 @@ public abstract class AIPlayer : Player
 		//take shot
 		ProcessShot(row, column, result);
 
+		if (result.Value == ResultOfAttack.Destroyed)
+		{
+			result.Text = "destroyed your";
+			Console.WriteLine(result.Text);
+		}
+			
+
 		return result;
 	}
 

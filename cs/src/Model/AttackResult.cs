@@ -42,6 +42,10 @@ public class AttackResult
 	/// <remarks>A textual description of the result.</remarks>
 	public string Text {
 		get { return _Text; }
+		set
+		{ 
+			_Text = value;
+		}
 	}
 
 	/// <summary>

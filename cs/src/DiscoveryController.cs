@@ -94,6 +94,7 @@ static class DiscoveryController
 
 		SwinGame.DrawBitmap(GameImage("MenuButton"), MENU_BUTTON_LEFT, MENU_BUTTON_TOP);
 
+
         DrawSmallField(HumanPlayer.PlayerGrid, HumanPlayer);
         DrawMessage();
 
