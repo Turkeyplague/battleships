@@ -159,12 +159,15 @@ static class DeploymentController
         }
 
         //DrawShips
-        foreach (ShipName sn in Enum.GetValues(typeof(ShipName))) {
-            int i = 0;
+		int shipNum = -1;
+		foreach (ShipName sn in Enum.GetValues(typeof(ShipName))) {
+			shipNum++;
+			int i = 0;
             i = ((int) sn) - 1;
             if (i >= 0) {
                 if (sn == _selectedShip) {
-                    SwinGame.DrawBitmap(GameImage("SelectedShip"), SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT);
+					string shipResource = "SelectedShip" + shipNum.ToString();
+					SwinGame.DrawBitmap(GameImage(shipResource), SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT);
                     //    SwinGame.FillRectangle(Color.LightBlue, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)
                     //Else
                     //    SwinGame.FillRectangle(Color.Gray, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)

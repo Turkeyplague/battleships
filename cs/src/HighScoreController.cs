@@ -21,7 +21,7 @@ using static MenuController;
 /// </remarks>
 static class HighScoreController
 {
-    private const int NAME_WIDTH = 3;
+    private const int NAME_WIDTH = 15;
 
     private const int SCORES_LEFT = 490;
     /// <summary>
@@ -169,7 +169,7 @@ static class HighScoreController
 			Point2D mPoint = SwinGame.MousePosition();
 			if (SwinGame.PointInRect(mPoint, R))
 			{
-				GameController.EndCurrentState();
+				GameController.SwitchState(GameState.ViewingMainMenu);
 			}
 		}
 //        if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN)) {
@@ -224,7 +224,8 @@ static class HighScoreController
             _Scores.Sort();
 			SaveScores();
 
-            GameController.EndCurrentState();
+          	//GameController.EndCurrentState();
+			GameController.AddNewState(GameState.ViewingHighScores);
         }
     }
 }

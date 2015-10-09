@@ -30,9 +30,9 @@ static class EndingGameController
         DrawSmallField(HumanPlayer.PlayerGrid, HumanPlayer);
 
         if (HumanPlayer.IsDestroyed) {
-            SwinGame.DrawTextLines("YOU LOSE!", Color.White, Color.Transparent, GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
+			SwinGame.DrawTextLines("YOU LOSE!", Color.White, Color.Transparent, GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, (SwinGame.ScreenHeight() / 2) - 50, SwinGame.ScreenWidth(), 100);
         } else {
-            SwinGame.DrawTextLines("-- WINNER --", Color.White, Color.Transparent, GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
+			SwinGame.DrawTextLines("-- WINNER --", Color.White, Color.Transparent, GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, (SwinGame.ScreenHeight() / 2) - 50, SwinGame.ScreenWidth(), 100);
         }
     }
 
@@ -42,7 +42,7 @@ static class EndingGameController
     /// </summary>
     public static void HandleEndOfGameInput()
     {
-        if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_RETURN) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
+		if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_RETURN) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
             ReadHighScore(HumanPlayer.Score);
             EndCurrentState();
         }
